@@ -1,14 +1,11 @@
-/**
- * @cjsx React.DOM
- */
+# @cjsx React.DOM
 
 React = require('react')
 
 Layout = require('./layout')
 
 Index = React.createClass
-  propTypes:
-    title: React.PropTypes.string
+  propTypes: { title: React.PropTypes.string }
 
   render: ->
     <Layout title={this.props.title}>
@@ -16,4 +13,4 @@ Index = React.createClass
       <p>Welcome to {this.props.title}</p>
     </Layout>
 
-module.exports = Index;
+module.exports = Index
