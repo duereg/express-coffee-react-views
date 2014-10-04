@@ -8,15 +8,12 @@
  */
 
 var React = require('react');
-var beautifyHTML = require('js-beautify').html;
-var nodeJSX = require('node-cjsx');
+var beautifyHtml = require('js-beautify').html;
+var nodeCoffeeJsx = require('node-cjsx');
 var _merge = require('lodash.merge');
 
 var DEFAULT_OPTIONS = {
-  cjsx: {
-    extension: '.cjsx',
-    harmony: false
-  },
+  extension: '.cjsx',
   doctype: '<!DOCTYPE html>',
   beautify: false
 };
@@ -24,9 +21,7 @@ var DEFAULT_OPTIONS = {
 function createEngine(engineOptions) {
   engineOptions = _merge(DEFAULT_OPTIONS, engineOptions);
 
-  // Don't install the require until the engine is created. This lets us leave
-  // the option of using harmony features up to the consumer.
-  nodeJSX.install(engineOptions.cjsx);
+  nodeCoffeeJsx.transform();
 
   var moduleDetectRegEx = new RegExp('\\' + engineOptions.cjsx.extension + '$');
 
@@ -40,9 +35,8 @@ function createEngine(engineOptions) {
     }
 
     if (engineOptions.beautify) {
-      // NOTE: This will screw up some things where whitespace is important, and be
-      // subtly different than prod.
-      markup = beautifyHTML(markup);
+      // NOTE: This will screw up some things where whitespace is important
+      markup = beautifyHtml(markup);
     }
 
     if (options.settings.env === 'development') {
