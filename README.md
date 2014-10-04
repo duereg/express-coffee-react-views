@@ -68,7 +68,7 @@ app.get '/', require('./routes').index
 ```
 
 ```coffee
-# routes/index.js
+# routes/index.coffee
 
 exports.index = (req, res) ->
   res.render 'index', { name: 'John' }
