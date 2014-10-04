@@ -23,7 +23,7 @@ function createEngine(engineOptions) {
 
   nodeCoffeeJsx.transform();
 
-  var moduleDetectRegEx = new RegExp('\\' + engineOptions.cjsx.extension + '$');
+  var moduleDetectRegEx = new RegExp('\\' + engineOptions.extension + '$');
 
   function renderFile(filename, options, cb) {
     try {
