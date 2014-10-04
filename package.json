@@ -1,0 +1,29 @@
+{
+  "name": "express-coffee-react-views",
+  "version": "0.5.0",
+  "description": "This is an Express view engine which renders CoffeeScript React components on the server. It renders static markup and *does not* support mounting those views on the client.",
+  "keywords": [
+    "express",
+    "view engine",
+    "react"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Blair <matt@mattblair.co>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duereg/express-coffee-react-views.git"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^0.11.1"
+  },
+  "dependencies": {
+    "react-tools": "^0.11.1",
+    "node-cjsx": "^0.11.0",
+    "js-beautify": "^1.4.2",
+    "lodash.merge": "^2.4.1"
+  }
+}
