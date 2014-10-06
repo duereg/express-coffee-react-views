@@ -38,7 +38,7 @@ option | values | default
 The defaults are sane, but just in case you want to change something, here's how it would look:
 
 ```coffee
-options = { cjsx: { harmony: true } };
+options = { extension: '.csx' };
 app.engine('cjsx', require('express-coffee-react-views').createEngine(options));
 ```
 
