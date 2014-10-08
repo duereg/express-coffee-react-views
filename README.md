@@ -38,7 +38,7 @@ option | values | default
 The defaults are sane, but just in case you want to change something, here's how it would look:
 
 ```coffee
-options =  extension: '.csx' 
+options =  extension: '.csx'
 app.engine 'cjsx', require('express-coffee-react-views').createEngine options
 ```
 
@@ -124,20 +124,23 @@ I know you're used to registering helpers with your view helper (`hbs.registerHe
 
 ### Where does my data come from?
 
-All "locals" are exposed to your view in `this.props`. These should work identically to other view engines, with the exception of how they are exposed. Using `this.props` follows the pattern of passing data into a React component, which is why we do it that way. Remember, as with other engines, rendering is synchronous. If you have database access or other async operations, they should be done in your routes.
+All "locals" are exposed to your view in `this.props`. These should work identically to other view engines.
 
+Using `this.props` follows the pattern of passing data into a React component, which is why we do it that way.
+
+Remember, as with other engines, rendering is synchronous. If you have database access or other async operations, they should be done in your routes.
 
 ## Caveats
 
 * I'm saying it again to avoid confusion: this does not do anything with React in the browser. This is *only* a solution for server-side rendering.
 * This uses `require` to access your views. This means that the plugin caches the contents for the lifetime of the server process. You need to restart your server when making changes to your views. **In development, we clear your view files from the cache so you can refresh your browser to see changes.**
-* React & JSX have their own rendering caveats. For example, inline `<script>`s and `<style>`s will need to use `dangerouslySetInnerHTML={{__html: 'script content'}}`. You can take advantage of ES6 template strings here.
+* React & JSX have their own rendering caveats. For example, inline `<script>`s and `<style>`s will need to use `dangerouslySetInnerHTML={{__html: 'script content'}}`.
 
-```js
-<script dangerouslySetInnerHTML={{__html: `
-  // google analtyics
-  // is a common use
-`}} />
+```coffee
+<script dangerouslySetInnerHTML={{__html: """
+  # google analtyics
+  # is a common use
+"""}} />
 ```
 
 * It's not possible to specify a doctype in JSX. You can override the default HTML5 doctype in the options.
