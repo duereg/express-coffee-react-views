@@ -1,6 +1,6 @@
 # express-coffee-react-views
 
-This is an [Express][express] view engine which renders [React][react] components written in coffeescript on server. It renders static markup and *does not* support mounting those views on the client.
+This is an [Express][express] view engine which renders [React][react] components written in CoffeeScript on the server. It renders static markup and *does not* support mounting those views on the client.
 
 This was derived from [express-react-views](https://github.com/reactjs/express-react-views)
 
