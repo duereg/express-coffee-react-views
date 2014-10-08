@@ -1,6 +1,6 @@
 # express-coffee-react-views
 
-This is an [Express][express] view engine which renders [React][react] components written in CoffeeScript on the server. It renders static markup and *does not* support mounting those views on the client.
+This is an [Express][express] view engine which renders [React][react] components written in [CoffeeScript](coffee) on the server. It renders static markup and *does not* support mounting those views on the client.
 
 This was derived from [express-react-views](https://github.com/reactjs/express-react-views)
 
@@ -150,3 +150,4 @@ Remember, as with other engines, rendering is synchronous. If you have database 
 [jade]: http://jade-lang.com/
 [ejs]: http://embeddedjs.com/
 [hbs]: https://github.com/barc/express-hbs
+[coffee]: http://coffeescript.org
