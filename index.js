@@ -1,6 +1,7 @@
 var React = require('react');
 var beautifyHtml = require('js-beautify').html;
 var nodeCoffeeJsx = require('node-cjsx');
+var nodeJsx = require('node-jsx');
 var _merge = require('lodash.merge');
 
 var DEFAULT_OPTIONS = {
@@ -13,6 +14,7 @@ function createEngine(engineOptions) {
   engineOptions = _merge(DEFAULT_OPTIONS, engineOptions);
 
   nodeCoffeeJsx.transform();
+  nodeJsx.install();
 
   var moduleDetectRegEx = new RegExp('\\' + engineOptions.extension + '$');
 
