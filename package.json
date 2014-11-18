@@ -1,6 +1,6 @@
 {
   "name": "express-coffee-react-views",
-  "version": "0.5.5",
+  "version": "0.6.0",
   "description": "This is an Express view engine which renders CoffeeScript React components on the server. It renders static markup and *does not* support mounting those views on the client.",
   "keywords": [
     "express",
