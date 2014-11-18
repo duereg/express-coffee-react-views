@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react": "^0.11.1"
+    "react": "^0.12.0"
   },
   "dependencies": {
     "react-tools": "^0.11.1",
