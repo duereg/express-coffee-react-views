@@ -22,7 +22,7 @@ function createEngine(engineOptions) {
     try {
       var markup = engineOptions.doctype;
       var component = require(filename);
-      markup += React.renderComponentToStaticMarkup(component(options));
+      markup += React.renderToStaticMarkup(component(options));
     } catch (e) {
       return cb(e);
     }
