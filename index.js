@@ -14,7 +14,7 @@ function createEngine(engineOptions) {
   engineOptions = _merge(DEFAULT_OPTIONS, engineOptions);
 
   nodeCoffeeJsx.transform();
-  nodeJsx.install();
+  nodeJsx.install({ extension: '.jsx', harmony: true });
 
   var moduleDetectRegEx = new RegExp('\\' + engineOptions.extension + '$');
 
