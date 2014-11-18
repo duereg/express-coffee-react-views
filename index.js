@@ -21,7 +21,7 @@ function createEngine(engineOptions) {
   function renderFile(filename, options, cb) {
     try {
       var markup = engineOptions.doctype;
-      var component = require(filename);
+      var component = React.createFactory(require(filename));
       markup += React.renderToStaticMarkup(component(options));
     } catch (e) {
       return cb(e);
