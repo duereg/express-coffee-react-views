@@ -48,7 +48,7 @@ app.engine 'cjsx', require('express-coffee-react-views').createEngine options
 Your views should be node modules that export a React component. Let's assume you have this file in `views/index.cjsx`:
 
 ```coffee
-/** @cjsx React.DOM */
+# @cjsx React.DOM
 
 HelloMessage = React.createClass
   render: ->
@@ -82,7 +82,7 @@ Simply pass the relevant props to a layout component.
 
 `views/layouts/default.cjsx`:
 ```coffee
-/** @cjsx React.DOM */
+# @cjsx React.DOM
 
 DefaultLayout = React.createClass
   render: ->
@@ -96,7 +96,7 @@ module.exports = DefaultLayout
 
 `views/index.cjsx`:
 ```coffee
-/** @cjsx React.DOM */
+# @cjsx React.DOM
 
 DefaultLayout = require './layouts/default'
 
